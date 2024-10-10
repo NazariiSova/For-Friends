@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <header>
-      <nav className="mt-3">
+      <nav className="mt-3 mb-8">
         <div className="box justify-around w-screen">
           <h1 className="box text-xl font-bold font-roman">
             {' '}
@@ -34,8 +34,8 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <a href="/gear" className="hover:underline">
-                Gear
+              <a href="/gears" className="hover:underline">
+                Gears
               </a>
             </li>
             <li>
@@ -72,8 +72,8 @@ export default function Header() {
               </a>
             </li>
             <li className="my-2">
-              <a href="/gear" className="hover:underline">
-                Gear
+              <a href="/gears" className="hover:underline">
+                Gears
               </a>
             </li>
             <li className="my-2">
