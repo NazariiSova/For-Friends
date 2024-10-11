@@ -5,13 +5,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Gear1Img from '../img/gear1.jpg';  
 import { useStore } from '../store/useStore';
+import { GearCard, TripCard } from '../store/useStore'; 
+
 import '../styles/card.scss';
+
+type CardProps = {
+  card: (GearCard | TripCard)[];
+};
 
 export default function Card() {
   const { gearCards, tripCards } = useStore(); 
   const card = gearCards[0]; 
 
-  console.log(card);
 
   if (!card) return <p>No card found</p>; 
 

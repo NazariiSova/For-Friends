@@ -5,7 +5,7 @@ import Gear1Img from '../img/gear1.jpg';
 import Trip1Img from '../img/trip1.jpg';
 import { StaticImageData } from 'next/image';
 
-type GearCard = {
+export interface GearCard  {
   id: string;
   title: string;
   date: string;
@@ -16,7 +16,8 @@ type GearCard = {
   type: 'gear';
 };
 
-type TripCard = {
+
+export interface TripCard {
   id: string;
   title: string;
   date: string;
