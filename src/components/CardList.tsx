@@ -1,14 +1,15 @@
 import React from 'react';
 import Card from './Card';
 import { GearCard, TripCard } from '../store/useStore';
+import '../styles/cardList.scss'
 
-type CardListProps = {
-  cards: (GearCard | TripCard)[];
-};
+interface CardListProps {
+  cards: Array<GearCard | TripCard>;
+}
 
 const CardList: React.FC<CardListProps> = ({ cards }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div className="card-container">
       {cards.map((card) => (
         <Card key={card.id} card={card} />
       ))}

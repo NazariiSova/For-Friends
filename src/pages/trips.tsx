@@ -1,13 +1,17 @@
-import React from 'react'
-import Layout from '@/app/layout'
+import React from 'react';
+import { useStore } from '../store/useStore'; 
+import CardList from '../components/CardList'; 
+import Layout from '@/app/layout';
 
 export default function Trips() {
+  const { tripCards } = useStore(); 
+
   return (
     <Layout>
       <main>
-        <h2>Welcome to My Website</h2>
-        <p>This is the main content of the website.</p>
+        <h2>Trip Collection</h2>
+        <CardList cards={tripCards} />
       </main>
     </Layout>
-  )
+  );
 }

@@ -1,0 +1,30 @@
+.card-container {
+    column-count: 4;
+    column-gap: 10px;
+    break-inside: avoid;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 1024px) {
+    .card-container {
+      column-count: 3;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card-container {
+      column-count: 2;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .card-container {
+      column-count: 1;
+    }
+  }
+  
+  .card {
+    break-inside: avoid;
+    margin-bottom: 10px;
+  }
+  

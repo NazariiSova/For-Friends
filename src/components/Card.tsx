@@ -1,32 +1,33 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import '../styles/card.scss'
 import { GearCard, TripCard } from '../store/useStore';
 
-import '../styles/card.scss';
+interface CardProps {
+  card: GearCard | TripCard;
+}
 
-type CardProps = {
-  card: GearCard | TripCard; 
-};
-
-export default function Card({ card }: CardProps) {
-  if (!card) return <p>No card found</p>;
-
+const Card: React.FC<CardProps> = ({ card }) => {
   return (
-    <div className="card">
-      <Image
-        src={card.imageUrl}
-        alt={card.title}
-        className="card-image"
-      />
-      <h3>{card.title}</h3>
-      <p>{card.date}</p>
-      <div className="card-hover">
-        <p>{card.fullContent}</p>
+    <div className="relative border p-2 rounded shadow-lg break-inside-avoid	">
+      <div className="group relative">
+        <Image
+          src={card.imageUrl}
+          alt={card.title}
+          className="w-full h-auto object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity">
+          <p className="absolute bottom-0 left-0 text-white p-2">
+            {card.shortDescription}
+          </p>
+        </div>
       </div>
-      <Link href={`/${card.type === 'gear' ? 'gears' : 'trips'}/${card.id}`}>
-        Read More
-      </Link>
+      <div className="p-2">
+        <h3 className="font-bold">{card.title}</h3>
+        <p>{card.date}</p>
+      </div>
     </div>
   );
-}
+};
+
+export default Card;
