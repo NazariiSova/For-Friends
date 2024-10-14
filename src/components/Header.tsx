@@ -4,6 +4,7 @@ import '../styles/global.scss'
 import searchIcon from '../img/icon/search.svg'
 import HamburgerIcon from '../img/icon/hamburger.svg'
 import Image from '../../node_modules/next/image'
+import Modal from './Modal' 
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
