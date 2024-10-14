@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import ReactDOM from 'react-dom';
-import closeIcon from '../img/icon/close.svg';
 
 import '../styles/modal.scss';
 
-const Modal = ({ isOpen, onClose, children }) => {
+type ModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  children: ReactNode;
+};
+
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
+
+  const modalRoot = document.getElementById('modal-root');
+  if (!modalRoot) return null;
 
   return ReactDOM.createPortal(
     <div className="modal-overlay" onClick={onClose}>
@@ -13,7 +21,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         {children}
       </div>
     </div>,
-    document.getElementById('modal-root')
+    modalRoot
   );
 };
 

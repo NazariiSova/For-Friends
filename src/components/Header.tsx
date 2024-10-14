@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import Link from 'next/dist/client/link'
 import '../styles/global.scss'
 import searchIcon from '../img/icon/search.svg'
 import HamburgerIcon from '../img/icon/hamburger.svg'
@@ -19,29 +20,29 @@ export default function Header() {
         <div className="box justify-around w-screen">
           <h1 className="box text-xl font-bold font-roman">
             {' '}
-            <a href="/">For Friends</a>
+            <Link href="/">For Friends</Link>
           </h1>
 
           <ul className="list-none justify-between w-1/4 box hamburger-menu">
             <li>
-              <a href="/" className="hover:underline">
+              <Link href="/" className="hover:underline">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="hover:underline">
+              <Link href="/about" className="hover:underline">
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/gears" className="hover:underline">
+              <Link href="/gears" className="hover:underline">
                 Gears
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/trips" className="hover:underline">
+              <Link href="/trips" className="hover:underline">
                 Trips
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -62,24 +63,24 @@ export default function Header() {
         <nav>
           <ul className="list-none flex flex-col items-center">
             <li className="my-2">
-              <a href="/" className="hover:underline">
+              <Link href="/" className="hover:underline">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="my-2">
-              <a href="/about" className="hover:underline">
+              <Link href="/about" className="hover:underline">
                 About
-              </a>
+              </Link>
             </li>
             <li className="my-2">
-              <a href="/gears" className="hover:underline">
+              <Link href="/gears" className="hover:underline">
                 Gears
-              </a>
+              </Link>
             </li>
             <li className="my-2">
-              <a href="/trips" className="hover:underline">
+              <Link href="/trips" className="hover:underline">
                 Trips
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

@@ -1,35 +1,33 @@
-'use client'
+'use client';
 
 import { create } from 'zustand';
 import Gear1Img from '../img/gear1.jpg';
 import Gear2Img from '../img/gear2.jpg';
 import Trip1Img from '../img/trip1.jpg';
-
 import Trip2Img from '../img/trip2.jpg';
 import { StaticImageData } from 'next/image';
 
-export interface GearCard  {
+export interface GearCard {
   id: string;
   title: string;
   date: string;
-  imageUrl: string | StaticImageData;  
+  imageUrl: string | StaticImageData;
   youtubeVideo: string;
   shortDescription: string;
   fullContent: string;
   type: 'gear';
-};
-
+}
 
 export interface TripCard {
   id: string;
   title: string;
   date: string;
-  imageUrl: string | StaticImageData;  
+  imageUrl: string | StaticImageData;
   youtubeVideo: string;
   shortDescription: string;
   fullContent: string;
   type: 'trip';
-};
+}
 
 type StoreState = {
   gearCards: GearCard[];
@@ -208,15 +206,12 @@ export const useStore = create<StoreState>((set) => ({
     },
   ],
   addCard: (card) =>
-  set((state) => {
-    console.log("card", card)
-
-    if (card.type === 'gear') {
-      console.log("card", card)
-      return { gearCards: [...state.gearCards, card] };
-    } else if (card.type === 'trip') {
-      return { tripCards: [...state.tripCards, card] };
-    }
-  }),
-
+    set((state) => {
+      if (card.type === 'gear') {
+        return { gearCards: [...state.gearCards, card] };
+      } else if (card.type === 'trip') {
+        return { tripCards: [...state.tripCards, card] };
+      }
+      return {}; 
+    }),
 }));
