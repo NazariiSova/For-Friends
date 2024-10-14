@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import '../styles/card.scss'
 import { GearCard, TripCard } from '../store/useStore';
 
@@ -10,6 +11,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ card }) => {
   return (
     <div className="relative border p-2 rounded shadow-lg break-inside-avoid	">
+      <Link href={`/${card?.type === 'gear' ? 'gears' : 'trips'}/${card?.id}`}>
       <div className="group relative">
         <Image
           src={card.imageUrl}
@@ -26,6 +28,7 @@ const Card: React.FC<CardProps> = ({ card }) => {
         <h3 className="font-bold">{card.title}</h3>
         <p>{card.date}</p>
       </div>
+      </Link>
     </div>
   );
 };
