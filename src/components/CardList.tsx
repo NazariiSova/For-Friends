@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import Card from './Card';
 import { GearCard, TripCard } from '../store/useStore';

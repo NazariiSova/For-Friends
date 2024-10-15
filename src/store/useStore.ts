@@ -1,5 +1,4 @@
 'use client';
-
 import { create } from 'zustand';
 import Gear1Img from '../img/gear1.jpg';
 import Gear2Img from '../img/gear2.jpg';

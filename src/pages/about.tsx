@@ -1,3 +1,4 @@
+'use client'
 import Layout from '@/app/layout'
 import React from 'react'
 import '../styles/global.scss'

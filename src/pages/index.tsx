@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { useStore } from '../store/useStore';
 import CardList from '../components/CardList';
@@ -10,12 +11,10 @@ const Home: React.FC = () => {
     <Layout>
       <section>
         <h2 className="text-xl font-bold">Gears</h2>
-        <p>Дослідіть наші прилади...</p>
         <CardList cards={gearCards} />
       </section>
       <section>
-        <h2 className="text-xl font-bold">Подорожі</h2>
-        <p>Дослідіть наші подорожі...</p>
+        <h2 className="text-xl font-bold">Trips</h2>
         <CardList cards={tripCards} />
       </section>
     </Layout>
@@ -23,3 +22,4 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+

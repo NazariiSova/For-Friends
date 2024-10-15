@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react';
 import { useRouter } from 'next/router';
 import { useStore } from '@/store/useStore';
@@ -13,7 +12,9 @@ export default function GearDetails() {
   
   const gearCard = gearCards.find((card) => card.id === id);
 
-  if (!gearCard) return <p>Card not found</p>;
+  if (!gearCard) return     <Layout>
+  <b>Gear not found</b>     </Layout>
+;
 
   return (
     <Layout>

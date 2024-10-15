@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -12,8 +13,8 @@ export default function TripDetails() {
   
   const tripCard = tripCards.find((card) => card.id === id);
 
-  if (!tripCard) return <p>Card not found</p>;
-
+  if (!tripCard) return     <Layout>
+  <b>Trip not found</b>     </Layout>
   return (
     <Layout>
       <main>
