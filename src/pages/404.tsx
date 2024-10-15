@@ -14,7 +14,7 @@ export default function Custom404() {
           На жаль, ми не змогли знайти те, що ви шукаєте.
         </p>
         <Link href="/">
-          <div className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+          <div className="mt-6 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-950">
             Повернутися на головну
           </div>
         </Link>

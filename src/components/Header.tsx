@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <header>
-      <nav className="mt-3 mb-8">
+      <nav className="mt-3 mb-8 overflow-hidden">
         <div className="box justify-around w-screen">
           <h1 className="box text-xl font-bold font-roman">
             {' '}
