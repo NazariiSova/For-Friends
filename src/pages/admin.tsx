@@ -1,31 +1,33 @@
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { User } from 'firebase/auth'; 
+import { auth } from "../app/firebase/config"; 
 
 const Admin = () => {
   const [user, setUser] = useState<User | null>(null);
-  const [email, setEmail] = useState('');
+    const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const auth = getAuth();
   const router = useRouter();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser);
     });
 
     return () => unsubscribe();
-  }, [auth]);
+  }, []);
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      router.push('/admin');
+      router.push('/admin'); 
     } catch (error) {
       console.error("Login error:", error);
     }
   };
+  
 
   if (user) {
     return <div>Welcome to the admin page!</div>;
