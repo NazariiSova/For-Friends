@@ -1,9 +1,58 @@
-'use client'
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User } from "firebase/auth";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
-import React from 'react'
+const Admin = () => {
+  const [user, setUser] = useState<User | null>(null);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const auth = getAuth();
+  const router = useRouter();
 
-export default function admin() {
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, [auth]);
+
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      router.push('/admin');
+    } catch (error) {
+      console.error("Login error:", error);
+    }
+  };
+
+  if (user) {
+    return <div>Welcome to the admin page!</div>;
+  }
+
   return (
-    <div>admin</div>
-  )
-}
+    <div>
+      <h1>Admin Login</h1>
+      <form onSubmit={handleLogin}>
+        <input 
+          type="email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+          placeholder="Email" 
+          required 
+        />
+        <input 
+          type="password" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+          placeholder="Password" 
+          required 
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
+};
+
+export default Admin;
