@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { User } from 'firebase/auth'; 
-import { auth } from "../app/firebase/config"; 
+import { auth, db } from "../app/firebase/config"; 
+import { doc, setDoc, getDoc  } from "firebase/firestore"; 
+
 
 const Admin = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -30,6 +32,22 @@ const Admin = () => {
   
 
   if (user) {
+    const add_update_read_post = async () => {
+      const post_id = "BNf5ykTTc3u6XnhrDFVMr"
+      const collection_name = "post"
+      await setDoc(doc(db, collection_name, post_id), {
+        title: "Los dkfjnsldlnfs",
+        main_photo: {
+          url: "https://picsum.photos/200/300",
+          alt_tag: "Random image"
+        },
+        meta_description: "gfdkjgifsdh"
+      });
+
+      const docRef = await getDoc(doc(db, collection_name, post_id))
+      console.log(docRef.data())
+    };
+    add_update_read_post();
     return <div>Welcome to the admin page!</div>;
   }
 
