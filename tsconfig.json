@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
-    "types": ["@ckeditor/ckeditor5-core"],
+    "types": ["@ckeditor/ckeditor5-core", "@types/draft-js"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,

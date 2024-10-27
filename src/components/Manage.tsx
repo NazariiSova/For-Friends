@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddPost from "./AddPost"; 
+import AddPost from "./AddPost";
 
 const Manage = () => {
   const [isAddingPost, setIsAddingPost] = useState(false);
@@ -12,13 +12,7 @@ const Manage = () => {
         <button onClick={() => setIsAddingPost(false)}>Існуючі пости</button>
       </div>
 
-      {isAddingPost ? (
-        <AddPost /> 
-      ) : (
-        <div>
-          <h2>Існуючі пости</h2>
-        </div>
-      )}
+      isAddingPost <AddPost />
     </div>
   );
 };
