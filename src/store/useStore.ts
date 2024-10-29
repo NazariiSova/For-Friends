@@ -1,7 +1,6 @@
-'use client';
 import { create } from 'zustand';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../app/firebase/config';
+import { fetchCachedData } from '../app/FetchCachedData';
+
 
 export interface Post {
   id: string;
@@ -52,19 +51,8 @@ export const useStore = create<StoreState>((set) => ({
   gearCards: [],
   tripCards: [],
   loadCards: async () => {
-    try {
-      const querySnapshot = await getDocs(collection(db, 'post'));
-      const postsData = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      })) as Post[];
-
-      const gearCards = postsData.filter((post) => post.post_type === '0');
-      const tripCards = postsData.filter((post) => post.post_type === '1');
-
-      set({ gearCards, tripCards });
-    } catch (error) {
-      console.error('Error loading posts from Firebase:', error);
-    }
+    const { gears, trips } = await fetchCachedData();
+    set({ gearCards: gears, tripCards: trips });
   },
 }));
+

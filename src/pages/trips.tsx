@@ -10,7 +10,7 @@ export default function Trips() {
   return (
     <Layout>
       <main>
-        <h2>Trip Collection</h2>
+      <h2 className='mb-5 text-2xl'>Мандрівки</h2>
         <CardList cards={tripCards} />
       </main>
     </Layout>

@@ -11,7 +11,7 @@ export default function Gears() {
   return (
     <Layout>
       <main>
-        <h2>Gear Collection</h2>
+        <h2 className='mb-5 text-2xl'>Спорядження</h2>
         <CardList cards={gearCards} /> 
       </main>
     </Layout>

@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Layout classes
+.about-container {
+  max-width: 800px;
+  color: #333;
+  line-height: 1.6;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.section-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.section-text {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #555;
+  white-space: pre-line;
+}
+
+// General utility styles
+.responsive-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #555;
+  }
+}
