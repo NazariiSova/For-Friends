@@ -1,11 +1,15 @@
-'use client'
-import React from 'react';
+'use client';
+import React, { useEffect } from 'react';
 import { useStore } from '../store/useStore';
 import CardList from '../components/CardList';
 import Layout from '@/app/layout';
 
 const Home: React.FC = () => {
-  const { gearCards, tripCards } = useStore();
+  const { gearCards, tripCards, loadCards } = useStore();
+
+  useEffect(() => {
+    loadCards();
+  }, [loadCards]);
 
   return (
     <Layout>
@@ -23,4 +27,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-

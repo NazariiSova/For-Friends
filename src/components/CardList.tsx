@@ -1,9 +1,35 @@
-'use client'
+'use client';
 
 import React from 'react';
 import Card from './Card';
-import { GearCard, TripCard } from '../store/useStore';
-import '../styles/cardList.scss'
+import '../styles/cardList.scss';
+
+export interface GearCard {
+  id: string;
+  title: string;
+  date: string;
+  main_photo?: { 
+    url: string;
+    alt_tag: string;
+  };
+  short_description: string;
+  content: string;
+  post_type: '0';
+}
+
+export interface TripCard {
+  id: string;
+  title: string;
+  date: string;
+  main_photo?: {
+    url: string;
+    alt_tag: string;
+  };
+  short_description: string;
+  content: string;
+  post_type: '1';
+}
+
 
 interface CardListProps {
   cards: Array<GearCard | TripCard>;
