@@ -18,6 +18,7 @@ const Card: React.FC<CardProps> = ({ card }) => {
           alt={card.title}
           className="w-full h-auto object-cover"
         />
+
         <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity">
           <p className="absolute bottom-0 left-0 text-white p-2">
             {card.shortDescription}

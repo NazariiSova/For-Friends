@@ -13,6 +13,7 @@ const Home: React.FC = () => {
         <h2 className="text-xl font-bold">Gears</h2>
         <CardList cards={gearCards} />
       </section>
+
       <section>
         <h2 className="text-xl font-bold">Trips</h2>
         <CardList cards={tripCards} />
