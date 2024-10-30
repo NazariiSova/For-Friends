@@ -55,7 +55,7 @@ const SearchResultsModal: React.FC<SearchResultsModalProps> = ({
 
         {results.map((result) => (
           <div key={result.id} className="result-item ">
-            <Link href={`/posts/${result.id}`}>
+            <Link href={`/${result.post_type === '0' ? 'gears' : 'trips'}/${result.id}`}>
               <button className="result-link flex-center">
                 <Image
                 className='result-img'

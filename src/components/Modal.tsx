@@ -1,6 +1,4 @@
-// Modal.tsx
 'use client'
-
 import React, { ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 import '../styles/modal.scss';
