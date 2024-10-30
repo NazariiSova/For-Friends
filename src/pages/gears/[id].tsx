@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useStore } from '@/store/useStore';
 import Layout from '@/app/layout';
 import Image from 'next/image';
+import '../../styles/post.scss'
 
 export default function GearDetails() {
   const router = useRouter();
@@ -20,13 +21,14 @@ export default function GearDetails() {
 
   return (
     <Layout>
-      <main>
+      <main className="details"> 
         <h2>{gearCard.title}</h2>
-        <p>{gearCard.date}</p>
-        <p>{gearCard.short_description}</p>
+        <p className="text-gray-700">{gearCard.date}</p>
+        <p className="text-gray-600">{gearCard.short_description}</p>
 
         {gearCard.main_photo && (
           <Image
+            className="image"
             src={gearCard.main_photo.url} 
             alt={gearCard.main_photo.alt_tag || "Gear image"} 
             width={500}
@@ -34,7 +36,7 @@ export default function GearDetails() {
           />
         )}
 
-        <div dangerouslySetInnerHTML={{ __html: gearCard.content }} />
+        <div className="content" dangerouslySetInnerHTML={{ __html: gearCard.content }} />
       </main>
     </Layout>
   );

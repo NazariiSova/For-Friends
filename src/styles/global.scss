@@ -76,9 +76,7 @@ input {
   padding: 0.5rem 1rem;
   width: 100%;
   outline: none;
-  
 }
-
 input:focus {
   border-color: black;
   border-radius: 1px solid rgba(59, 130, 246, 0.5);
@@ -106,7 +104,6 @@ input:focus {
 .font-roman {
   font-family: "Times New Roman", Times, serif;
 }
-
 
 @media (max-width: 767px) {
   .hamburger-menu {
