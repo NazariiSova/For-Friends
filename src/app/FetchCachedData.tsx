@@ -6,14 +6,16 @@ let cachedData: { gears: Post[]; trips: Post[] } | null = null;
 
 export const fetchCachedData = async () => {
   if (cachedData) {
+    console.log("Using cached data");
     return cachedData;
   }
 
+  console.log("Fetching data from Firebase");
   const querySnapshot = await getDocs(collection(db, 'post'));
   const postsData = querySnapshot.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
-  })) as Post[]; 
+  })) as Post[];
 
   cachedData = {
     gears: postsData.filter((post) => post.post_type === '0'),

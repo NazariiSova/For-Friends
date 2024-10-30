@@ -42,6 +42,14 @@ const AddPost = () => {
     content: Yup.string().required('Content is required'),
   })
 
+  const handleCopyLink = () => {
+    if (additionalImageUrl) {
+      navigator.clipboard.writeText(additionalImageUrl).then(() => {
+        alert('Link copied to clipboard!')
+      })
+    }
+  }
+
   return (
     <Formik
       initialValues={{
@@ -84,7 +92,7 @@ const AddPost = () => {
       }}
     >
       {({ values, setFieldValue }) => (
-        <Form className="p-4 max-w-lg mx-auto flex flex-col">
+        <Form className="p-4 max-w-screen mx-[5%] flex flex-col">
           <h2 className="text-2xl font-bold mb-4">Add New Post</h2>
           <div className="mb-4">
             <Field
@@ -148,7 +156,7 @@ const AddPost = () => {
             )}
             {uploadedImageUrl && <p>Uploaded Image URL: {uploadedImageUrl}</p>}
           </div>
-           <div className="mb-4">
+          <div className="mb-4">
             <Field
               type="text"
               name="altTag"
@@ -169,7 +177,16 @@ const AddPost = () => {
               className="file-input"
             />
             {additionalImageUrl && (
-              <p>Additional Image URL: {additionalImageUrl}</p>
+              <div>
+                <p>Additional Image URL: {additionalImageUrl}</p>
+                <button
+                  type="button"
+                  onClick={handleCopyLink}
+                  className="bg-blue-500 text-white px-4 py-2 mt-2 rounded"
+                >
+                  Copy Link
+                </button>
+              </div>
             )}
           </div>
           <div className="mb-4">
@@ -177,7 +194,7 @@ const AddPost = () => {
               as="textarea"
               name="content"
               placeholder="Content"
-              className="input-field h-32 w-full"
+              className="input-field h-[500px] w-full"
               onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
                 setFieldValue('content', e.target.value)
               }
