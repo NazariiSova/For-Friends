@@ -44,14 +44,14 @@ export interface TripCard {
 type StoreState = {
   gearCards: Post[];
   tripCards: Post[];
-  loadCards: () => Promise<void>;
+  loadCards: () => Promise<void>
 };
 
 export const useStore = create<StoreState>((set) => ({
   gearCards: [],
   tripCards: [],
   loadCards: async () => {
-    const { gears, trips } = await fetchCachedData();
+    const { gears, trips } = await fetchCachedData()
     set({ gearCards: gears, tripCards: trips });
   },
 }));

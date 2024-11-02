@@ -29,8 +29,7 @@ export default function TripDetails() {
         {tripCard.main_photo && (
           <Image
             className="image"
-            src={tripCard.main_photo.url}
-            alt={tripCard.main_photo.alt_tag || "Trip image"}
+            src={tripCard.main_photo.url} alt={tripCard.main_photo.alt_tag || `Зображення ${tripCard.title}`}
             width={500}
             height={300}
           />

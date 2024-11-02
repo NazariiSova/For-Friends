@@ -29,8 +29,7 @@ export default function GearDetails() {
         {gearCard.main_photo && (
           <Image
             className="image"
-            src={gearCard.main_photo.url} 
-            alt={gearCard.main_photo.alt_tag || "Gear image"} 
+            src={gearCard.main_photo.url} alt={gearCard.main_photo.alt_tag || `Зображення ${gearCard.title}`}
             width={500}
             height={300}
           />
