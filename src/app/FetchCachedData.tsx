@@ -1,3 +1,4 @@
+// app/FetchCachedData.ts
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../app/firebase/config';
 import { Post } from '../store/useStore';
