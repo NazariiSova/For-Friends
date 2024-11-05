@@ -3,7 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import '../styles/global.scss'
 import { addDoc, collection } from 'firebase/firestore'
-import { db, storage } from '../app/firebase/config'
+import { db, storage } from '../firebase/config'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 
 const AddPost = () => {

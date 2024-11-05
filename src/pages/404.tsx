@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import Layout from '@/app/layout'
+import Layout from '../pages/_app';
 
 export default function Custom404() {
   return (

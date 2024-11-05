@@ -1,15 +1,15 @@
 'use client'
-import Layout from '@/app/layout'
+import Layout from '../pages/_app'
 import React from 'react'
-import '../styles/about.scss'
+import styles from '../styles/about.module.scss'
 
 export default function About() {
   return (
     <Layout>
-      <main className="about-container responsive-container mx-auto p-6">
-        <section className="section-card mb-8">
-          <h2 className="section-title">Про сайт</h2>
-          <p className="section-text">
+      <main className={`${styles.aboutContainer} ${styles.responsiveContainer}`}>
+        <section className={styles.sectionCard}>
+          <h2 className={styles.sectionTitle}>Про сайт</h2>
+          <p className={styles.sectionText}>
             Цей сайт створено для мене, моїх друзів, знайомих та однодумців.
             Платформа створена не для збагачення, а для викладення моїх поглядів
             на туризм. Я не веду підприємницьку діяльність у сфері туризму, а
@@ -22,9 +22,9 @@ export default function About() {
           </p>
         </section>
 
-        <section className="section-card mb-8">
-          <h2 className="section-title">Про мене</h2>
-          <p className="section-text">
+        <section className={styles.sectionCard}>
+          <h2 className={styles.sectionTitle}>Про мене</h2>
+          <p className={styles.sectionText}>
             Я почав займатися туризмом у віці 12 років. Багато мандрував,
             займався хайкінгом, кемпінгом, бушкрафтингом, трекінгом,
             трейлранінгом, велоспортом, дещо автостопив та запрошував людей з
@@ -36,9 +36,9 @@ export default function About() {
           </p>
         </section>
 
-        <section className="section-card mb-8">
-          <h2 className="section-title">Про спорядження</h2>
-          <p className="section-text">
+        <section className={styles.sectionCard}>
+          <h2 className={styles.sectionTitle}>Про спорядження</h2>
+          <p className={styles.sectionText}>
             За життя я спробував багато спорядження. Мій перший рюкзак був на
             сто літрів, потім я придбав собі менш якісний, який порвався вже під
             час першої мандрівки. Па&quotятаю ще старі брезентові намети, каркас
@@ -62,9 +62,10 @@ export default function About() {
           </p>
         </section>
 
-        <section className="section-card mb-8">
-          <h2 className="section-title">Про мандрівки</h2>
-          <p className="section-text">
+       
+        <section className={styles.sectionCard}>
+          <h2 className={styles.sectionTitle}>Про мандрівки</h2>
+          <p className={styles.sectionText}>
             У розділі Trips, я не маю за мету давати настанови чи інструкції
             щодо маршрутів. За професією, я не гід, а людей кличу з собою лише
             для задоволення. Я мало фотографую та мало пишу, я не дбаю про

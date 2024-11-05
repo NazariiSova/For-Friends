@@ -2,7 +2,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { useStore } from '@/store/useStore';
-import Layout from '@/app/layout';
+import Layout from '../../pages/_app';
 import Image from 'next/image';
 import '../../styles/post.scss'
 

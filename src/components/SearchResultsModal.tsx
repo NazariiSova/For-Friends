@@ -1,26 +1,24 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import '../styles/SearchResultsModal.scss'
-import '../styles/global.scss'
-
+import Link from 'next/link';
+import Image from 'next/image';
+import styles from '../styles/SearchResultsModal.module.scss';
 
 interface SearchResult {
-  id: string
-  title: string
-  short_description: string
+  id: string;
+  title: string;
+  short_description: string;
   main_photo?: {
-    url: string
-    alt_tag: string
-  }
-  post_type: '0' | '1'
+    url: string;
+    alt_tag: string;
+  };
+  post_type: '0' | '1';
 }
 
 interface SearchResultsModalProps {
-  results: SearchResult[]
-  onClose: () => void
-  onSearch: (query: string) => void
-  searchQuery: string
-  setSearchQuery: React.Dispatch<React.SetStateAction<string>>
+  results: SearchResult[];
+  onClose: () => void;
+  onSearch: (query: string) => void;
+  searchQuery: string;
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const SearchResultsModal: React.FC<SearchResultsModalProps> = ({
@@ -31,17 +29,17 @@ const SearchResultsModal: React.FC<SearchResultsModalProps> = ({
   setSearchQuery,
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value)
-    onSearch(e.target.value)
-  }
+    setSearchQuery(e.target.value);
+    onSearch(e.target.value);
+  };
 
   return (
-    <div className="custom-modal-overlay" onClick={onClose}>
+    <div className={styles.customModalOverlay} onClick={onClose}>
       <div
-        className="custom-modal-content flex-center gap-[15%]"
+        className={`${styles.customModalContent} ${styles.flexCenter} ${styles.gap}`}
         onClick={(e) => e.stopPropagation()}
       >
-        <button onClick={onClose} className="modal-close">
+        <button onClick={onClose} className={styles.modalClose}>
           ✕
         </button>
 
@@ -50,23 +48,23 @@ const SearchResultsModal: React.FC<SearchResultsModalProps> = ({
           value={searchQuery}
           onChange={handleChange}
           placeholder="Search..."
-          className="modal-search-input"
+          className={styles.modalSearchInput}
         />
 
         {results.map((result) => (
-          <div key={result.id} className="result-item ">
+          <div key={result.id} className={styles.resultItem}>
             <Link href={`/${result.post_type === '0' ? 'gears' : 'trips'}/${result.id}`}>
-              <button className="result-link flex-center">
+              <button className={styles.resultLink}>
                 <Image
-                className='result-img'
+                  className={styles.resultImg}
                   src={result.main_photo?.url || ''}
                   alt={result.main_photo?.alt_tag || 'Image'}
                   width={60}
                   height={60}
                 />
                 <div>
-                  <h3 className="result-title">{result.title}</h3>
-                  <p className="result-description">
+                  <h3 className={styles.resultTitle}>{result.title}</h3>
+                  <p className={styles.resultDescription}>
                     {result.short_description}
                   </p>
                 </div>
@@ -76,7 +74,7 @@ const SearchResultsModal: React.FC<SearchResultsModalProps> = ({
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SearchResultsModal
+export default SearchResultsModal;

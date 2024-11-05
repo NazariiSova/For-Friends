@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { fetchCachedData } from '../app/FetchCachedData';
+import { fetchCachedData } from '../api/FetchCachedData';
 
 
 export interface Post {

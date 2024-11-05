@@ -1,41 +1,40 @@
-'use client';
-import React, { useEffect } from 'react';
-import { useStore } from '../store/useStore';
-import CardList from '../components/CardList';
-import Layout from '@/app/layout';
-import Link from 'next/link';
-import '../styles/home.scss';
+'use client'
+import React, { useEffect } from 'react'
+import { useStore } from '../store/useStore'
+import CardList from '../components/CardList'
+import Link from 'next/link'
+import styles from '../styles/home.module.scss'
 
 const Home: React.FC = () => {
-  const { gearCards, tripCards, loadCards } = useStore();
+  const { gearCards, tripCards, loadCards } = useStore()
 
   useEffect(() => {
-    loadCards();
-  }, [loadCards]);
+    loadCards()
+  }, [loadCards])
 
   return (
-    <Layout>
-      <section className="about-section">
-        <h2 className="section-title">Про цей сайт :</h2>
-        <p className="section-text">
+    <>
+      <section className={styles.aboutSection}>
+        <h2 className={styles.sectionTitle}>Про цей сайт :</h2>
+        <p className={styles.sectionText}>
           Тут ви зможете дізнатися про мене, мої погляди на туризм та багато іншого...
         </p>
-        <Link href="/about" className="read-more-link">Читати більше</Link>
+        <Link href="/about" className={styles.readMoreLink}>Читати більше</Link>
       </section>
 
-      <section className="cards-section">
-        <h2 className="section-title">Спорядження</h2>
+      <section className={styles.cardsSection}>
+        <h2 className={styles.sectionTitle}>Спорядження</h2>
         <CardList cards={gearCards.slice(0, 8)} />
-        <Link href="/gears" className="see-more-link">Переглянути усі</Link>
+        <Link href="/gears" className={styles.seeMoreLink}>Переглянути усі</Link>
       </section>
 
-      <section className="cards-section">
-        <h2 className="section-title">Мандрівки</h2>
+      <section className={styles.cardsSection}>
+        <h2 className={styles.sectionTitle}>Мандрівки</h2>
         <CardList cards={tripCards.slice(0, 8)} />
-        <Link href="/trips" className="see-more-link">Переглянути усі</Link>
+        <Link href="/trips" className={styles.seeMoreLink}>Переглянути усі</Link>
       </section>
-    </Layout>
-  );
-};
+    </>
+  )
+}
 
-export default Home;
+export default Home
