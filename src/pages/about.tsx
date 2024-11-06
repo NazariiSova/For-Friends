@@ -1,10 +1,18 @@
 'use client'
 import Layout from '@/components/layout'
 import React from 'react'
+import Head from 'next/head'
+
 
 export default function About() {
   return (
-    <Layout>
+    <>
+     <Head>
+        <title>Про сайт | For Friends</title>
+        <meta name="description" content="Дізнайтеся про мої погляди на туризм, спорядження та мандрівки." />
+        <link rel="canonical" href="https://for-friends.vercel.app/" />
+      </Head>
+      <Layout>
       <main className="about-container responsive-container mx-auto p-6">
         <section className="section-card mb-8">
           <h2 className="section-title">Про сайт</h2>
@@ -79,5 +87,8 @@ export default function About() {
         </section>
       </main>
     </Layout>
+
+    </>
+  
   )
 }

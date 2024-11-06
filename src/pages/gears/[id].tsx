@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import { useStore } from '@/store/useStore';
 import Layout from '@/components/layout';
 import Image from 'next/image';
+import Head from 'next/head';
+import JsonLd from '@/components/JsonLd';
 
 export default function GearDetails() {
   const router = useRouter();
@@ -20,6 +22,24 @@ export default function GearDetails() {
 
   return (
     <Layout>
+      <Head>
+        <title>{gearCard.title} - For Friends</title>
+        <meta name="description" content={gearCard.short_description} />
+        <meta property="og:title" content={gearCard.title} />
+        <meta property="og:description" content={gearCard.short_description} />
+        <meta property="og:image" content={gearCard.main_photo?.url || ''} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://for-friends.vercel.app/gear/${id}`} />
+      </Head>
+
+      <JsonLd
+        id={gearCard.id}
+        title={gearCard.title}
+        description={gearCard.short_description}
+        image={gearCard.main_photo?.url || ''}
+        date={gearCard.date}
+      />
+
       <main className="details"> 
         <h2>{gearCard.title}</h2>
         <p className="text-gray-700">{gearCard.date}</p>

@@ -29,7 +29,6 @@ export interface TripCard {
   post_type: '1';
 }
 
-
 interface CardListProps {
   cards: Array<GearCard | TripCard>;
 }
