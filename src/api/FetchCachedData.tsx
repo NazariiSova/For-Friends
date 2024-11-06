@@ -1,5 +1,5 @@
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../app/firebase/config';
+import { db } from '../firebase/config';
 import { Post } from '../store/useStore';
 
 let cachedData: { gears: Post[]; trips: Post[] } | null = null;

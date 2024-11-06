@@ -1,7 +1,6 @@
 'use client'
-import Layout from '@/app/layout'
+import Layout from '@/components/layout'
 import React from 'react'
-import '../styles/about.scss'
 
 export default function About() {
   return (

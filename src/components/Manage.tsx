@@ -1,7 +1,6 @@
 import { useState } from "react";
 import AddPost from "./AddPost";
 import PostsList from "./PostsList";
-import '../styles/global.scss';
 
 const Manage = () => {
   const [isAddingPost, setIsAddingPost] = useState(false);

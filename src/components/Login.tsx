@@ -1,7 +1,7 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { auth } from "../app/firebase/config";
+import { auth } from "../firebase/config";
 
 const Login = () => {
   const [email, setEmail] = useState('');

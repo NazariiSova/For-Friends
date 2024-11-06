@@ -1,7 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import '../styles/SearchResultsModal.scss'
-import '../styles/global.scss'
 
 
 interface SearchResult {

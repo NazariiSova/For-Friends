@@ -8,7 +8,6 @@ import HamburgerIcon from '../img/icon/hamburger.svg';
 import Modal from './Modal';
 import SearchResultsModal from './SearchResultsModal';
 import { DataFetcher } from './DataFetcher';
-import '../styles/header.scss'
 
 export interface Post {
   id: string;

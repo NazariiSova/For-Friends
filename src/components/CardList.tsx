@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Card from './Card';
-import '../styles/cardList.scss';
 
 export interface GearCard {
   id: string;

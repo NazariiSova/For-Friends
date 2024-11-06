@@ -2,7 +2,7 @@
 import React from 'react';
 import { useStore } from '../store/useStore'; 
 import CardList from '../components/CardList'; 
-import Layout from '@/app/layout';
+import Layout from '@/components/layout';
 
 export default function Trips() {
   const { tripCards } = useStore(); 
