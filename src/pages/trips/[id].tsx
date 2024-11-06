@@ -30,6 +30,7 @@ export default function TripDetails() {
         <meta property="og:image" content={tripCard.main_photo?.url || ''} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://for-friends.vercel.app/trip/${id}`} />
+        <meta name="google-site-verification" content="tZ_uTosZ1qy33pO_8RY1JHWYuEpurFBUQq3lQYjhaQY" />
       </Head>
 
       <JsonLd

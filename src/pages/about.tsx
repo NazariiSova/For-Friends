@@ -9,6 +9,7 @@ export default function About() {
     <>
      <Head>
         <title>Про сайт | For Friends</title>
+        <meta name="google-site-verification" content="tZ_uTosZ1qy33pO_8RY1JHWYuEpurFBUQq3lQYjhaQY" />
         <meta name="description" content="Дізнайтеся про мої погляди на туризм, спорядження та мандрівки." />
         <link rel="canonical" href="https://for-friends.vercel.app/" />
       </Head>

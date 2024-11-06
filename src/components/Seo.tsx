@@ -11,6 +11,7 @@ export default function Seo({ title, description, url, image }: SeoProps) {
   return (
     <Head>
       <title>{title}</title>
+      <meta name="google-site-verification" content="tZ_uTosZ1qy33pO_8RY1JHWYuEpurFBUQq3lQYjhaQY" />
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

@@ -24,6 +24,7 @@ export default function GearDetails() {
     <Layout>
       <Head>
         <title>{gearCard.title} - For Friends</title>
+        <meta name="google-site-verification" content="tZ_uTosZ1qy33pO_8RY1JHWYuEpurFBUQq3lQYjhaQY" />
         <meta name="description" content={gearCard.short_description} />
         <meta property="og:title" content={gearCard.title} />
         <meta property="og:description" content={gearCard.short_description} />

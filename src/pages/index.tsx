@@ -25,7 +25,7 @@ const Home: React.FC = () => {
         <meta name="description" content="Сайт створено Назаром Совою для друзів та однодумців. Тут ви знайдете інформацію про туризм, спорядження та мандрівки." />
 
         <meta name="keywords" content="For Friends, туризм, спорядження, мандрівки, Назар Сова" />
-
+        <meta name="google-site-verification" content="tZ_uTosZ1qy33pO_8RY1JHWYuEpurFBUQq3lQYjhaQY" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Головна сторінка | Туризм та спорядження сайт For Friends" />
         <meta property="og:description" content={ogDescription} />
