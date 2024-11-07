@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import searchIcon from '../img/icon/search.svg';
 import HamburgerIcon from '../img/icon/hamburger.svg';
-import Modal from './Modal';
+import { Modal } from './Modal';
 import SearchResultsModal from './SearchResultsModal';
 import { DataFetcher } from './DataFetcher';
 
@@ -27,8 +27,11 @@ export default function Header() {
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [allPosts, setAllPosts] = useState<Post[]>([]);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
+  const toggleMenu = () => {
+    console.log('Menu toggle:', !isMenuOpen);
+    setIsMenuOpen(!isMenuOpen);
+  };
+  
   const toggleSearchModal = () => setIsSearchModalOpen(!isSearchModalOpen);
 
   useEffect(() => {
