@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "lib": ["dom", "dom.iterable", "esnext"],
     "types": ["@ckeditor/ckeditor5-core", "@types/draft-js"],
     "allowJs": true,
@@ -19,9 +20,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"],
+      "@components/*": ["components/*"],
+      "@scripts/*": ["../scripts/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/gears"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "pages/gears"],
   "exclude": ["node_modules"]
 }

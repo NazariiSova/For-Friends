@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://for-friends.vercel.app/
+
+# Sitemaps
+Sitemap: https://for-friends.vercel.app/sitemap.xml
+Sitemap: https://for-friends.vercel.app//api/sitemap
