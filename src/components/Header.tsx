@@ -28,7 +28,6 @@ export default function Header() {
   const [allPosts, setAllPosts] = useState<Post[]>([]);
 
   const toggleMenu = () => {
-    console.log('Menu toggle:', !isMenuOpen);
     setIsMenuOpen(!isMenuOpen);
   };
   
