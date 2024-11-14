@@ -1,8 +1,6 @@
-'use client'
-
-import Header from './Header'
-import Footer from './Footer'
-import Head from 'next/head'
+import Header from './Header';
+import Footer from './Footer';
+import Head from 'next/head';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -22,11 +20,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-
-      <main>{children}</main>
-
-      <Footer />
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </div>
     </>
-  )
+  );
 }
