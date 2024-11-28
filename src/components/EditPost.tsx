@@ -199,10 +199,9 @@ const EditPost: React.FC<EditPostProps> = ({ postId }) => {
             <Field type="text" name="alt_tag" placeholder="Alt Tag" className="input-field" />
             <ErrorMessage name="alt_tag" component="div" className="error" />
           </div>
-
       
           <div className="mb-4">
-            <Field as="textarea" name="content" placeholder="Content" className="input-field h-32 w-full" />
+            <Field as="textarea" name="content" placeholder="Content" className="input-field h-40 w-full" />
             <ErrorMessage name="content" component="div" className="error" />
           </div>
           <div className="border p-4 rounded-lg overflow-y-auto max-h-screen mb-4">

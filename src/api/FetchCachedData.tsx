@@ -1,4 +1,4 @@
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { Post } from '../store/useStore';
 
@@ -6,11 +6,9 @@ let cachedData: { gears: Post[]; trips: Post[] } | null = null;
 
 export const fetchCachedData = async () => {
   if (cachedData) {
-    console.log("Using cached data");
     return cachedData;
   }
 
-  console.log("Fetching data from Firebase");
   const querySnapshot = await getDocs(collection(db, 'post'));
   const postsData = querySnapshot.docs.map((doc) => ({
     id: doc.id,
@@ -23,4 +21,21 @@ export const fetchCachedData = async () => {
   };
 
   return cachedData;
+};
+
+export const fetchItemById = async (id: string): Promise<Post | null> => {
+  try {
+    const docRef = doc(db, 'post', id); 
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      return { id: docSnap.id, ...docSnap.data() } as Post;
+    } else {
+      console.warn(`No document found with id: ${id}`);
+      return null;
+    }
+  } catch (error) {
+    console.error('Error fetching item by ID:', error);
+    return null;
+  }
 };
